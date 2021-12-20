@@ -56,6 +56,7 @@ class KerberosAuthenticationHandler(AuthenticationHandler):
         ccache = section.get('ccache', True)
         principals = section.get('principals', '')
         enctypes = section.get('enctypes', '')
+        delegate = section.get('delegate', True)
 
         # Decode all encryption types.
         etypes = []
@@ -82,6 +83,7 @@ class KerberosAuthenticationHandler(AuthenticationHandler):
                     principal_name=principal,
                     init_ccache=ccache,
                     keytab=keytab,
+                    delegate=delegate,
                 )
             except KerberosError:
                 # Ignore
