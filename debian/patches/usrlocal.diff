@@ -1,0 +1,47 @@
+Index: cepces/cepces/config.py
+===================================================================
+--- cepces.orig/cepces/config.py
++++ cepces/cepces/config.py
+@@ -27,14 +27,12 @@ from cepces.soap import auth as SOAPAuth
+ 
+ DEFAULT_CONFIG_FILES = [
+     '/etc/cepces/cepces.conf',
+-    '/usr/local/etc/cepces/cepces.conf',
+     'conf/cepces.conf',
+     'cepces.conf',
+ ]
+ 
+ DEFAULT_CONFIG_DIRS = [
+     '/etc/cepces/conf.d',
+-    '/usr/local/etc/cepces/conf.d'
+     'conf/conf.d',
+ ]
+ 
+Index: cepces/cepces/log.py
+===================================================================
+--- cepces.orig/cepces/log.py
++++ cepces/cepces/log.py
+@@ -24,7 +24,6 @@ from cepces import __title__
+ LOGGING_CONFIG_FILES = [
+     '{}/logging.conf'.format(__title__),
+     '/etc/{}/logging.conf'.format(__title__),
+-    '/usr/local/etc/{}/logging.conf'.format(__title__),
+ ]
+ 
+ 
+Index: cepces/setup.py
+===================================================================
+--- cepces.orig/setup.py
++++ cepces/setup.py
+@@ -68,9 +68,9 @@ setup(
+     ],
+ 
+     data_files=[
+-        ('/usr/local/libexec/certmonger', ['bin/cepces-submit']),
++        ('/usr/lib/libexec/certmonger', ['bin/cepces-submit']),
+         (
+-            '/usr/local/etc/cepces',
++            '/etc/cepces',
+             [
+                 'conf/cepces.conf.dist',
+                 'conf/logging.conf.dist',

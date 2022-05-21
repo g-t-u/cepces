@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=cepces
+export PYBUILD_DISABLE=test
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

@@ -1,0 +1,17 @@
+Source: certmonger-cepces
+Maintainer: g-t-u <grokking.the.universe@gmail.com>
+Section: python
+Priority: optional
+Build-Depends: dh-python, python3-setuptools, python3-all, debhelper (>= 9)
+Standards-Version: 3.9.6
+Homepage: https://github.com/g-t-u/cepces
+
+Package: certmonger-cepces
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, python3-cryptography (>= 1.2), python3-requests, python3-requests-kerberos (>= 0.9), certmonger
+Description: CEP/CES library.
+ This application uses two SOAP endpoints over HTTPS provided by Microsoft
+ Active Directory Certificate Services. Currently, only Kerberos authentication
+ is supported. Therefore, the client has to be a Windows Domain Member with a
+ valid Kerberos keytab.
+
