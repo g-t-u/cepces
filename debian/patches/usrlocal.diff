@@ -38,7 +38,7 @@ Index: cepces/setup.py
  
      data_files=[
 -        ('/usr/local/libexec/certmonger', ['bin/cepces-submit']),
-+        ('/usr/lib/libexec/certmonger', ['bin/cepces-submit']),
++        ('/usr/lib/certmonger', ['bin/cepces-submit']),
          (
 -            '/usr/local/etc/cepces',
 +            '/etc/cepces',
